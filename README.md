@@ -10,6 +10,16 @@ GridWise Smart Campus Energy Optimization Challenge — an LLM-assisted API that
 - Request validation with Zod
 - Guardrail checks before executing optimization plans
 
+## Live Deployment
+
+The API is deployed on Render at:
+
+- **Base URL:** `https://onest-phase.onrender.com`
+- **Health check:** `GET https://onest-phase.onrender.com/health`
+- **Optimize energy:** `POST https://onest-phase.onrender.com/optimize-energy`
+
+> Note: free Render instances spin down when idle, so the response may delay over 1 minute due to cold start on the first request after inactivity.
+
 ## Requirements
 
 - Node.js >= 18.0.0
@@ -54,6 +64,19 @@ The server runs on `http://localhost:3000` by default (configurable via `PORT`).
 | GET    | `/health`           | Health check                             |
 | POST   | `/optimize-energy`  | Submit an operator directive for optimization |
 
+These are available both locally (`http://localhost:3000`) and on the live deployment above.
+
+## Testing
+
+Run the sample test cases:
+```bash
+npm test
+```
+
+Other test scripts in `tests/`:
+- `apiEndpoint.test.js` — tests the API endpoint
+- `sampleCases.test.js` — runs sample cases against the optimizer
+- `testOpenRouterLive.js` — live test against the OpenRouter API (requires a valid `OPENROUTER_API_KEY`)
 
 ## Project Structure
 
@@ -81,5 +104,3 @@ src/
 See [`.env.example`](./.env.example) for the full list. At minimum, you need:
 
 - `OPENROUTER_API_KEY` — your OpenRouter API key
-
-
