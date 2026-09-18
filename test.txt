@@ -1,0 +1,15 @@
+api key = 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
+
+
+curl https://openrouter.ai/api/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer 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" \
+  -d '{
+  "model": "openai/gpt-4o",
+  "messages": [
+    {
+      "role": "user",
+      "content": "What is the meaning of life?"
+    }
+  ]
+}'

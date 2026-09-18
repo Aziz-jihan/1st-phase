@@ -1,0 +1,31 @@
+{
+  "name": "gridwise-energy-optimizer",
+  "version": "1.0.0",
+  "description": "GridWise Smart Campus Energy Optimization Challenge - LLM-Assisted Operator Directive Interpretation API",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node tests/sampleCases.test.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "javascript-lp-solver": "^0.4.24",
+    "zod": "^3.24.2"
+  },
+  "keywords": [
+    "energy-optimization",
+    "grok",
+    "express",
+    "linear-programming",
+    "hackathon"
+  ],
+  "author": "",
+  "license": "ISC"
+}
