@@ -132,9 +132,3 @@ The API is then available at `http://localhost:3000`. Check that the container i
 ```bash
 curl http://localhost:3000/health
 ```
-
-You can also load variables from a local `.env` file (do not commit this file):
-
-```bash
-docker run --rm -p 3000:3000 --env-file .env gridwise-energy-optimizer
-```
