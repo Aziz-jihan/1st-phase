@@ -66,18 +66,6 @@ The server runs on `http://localhost:3000` by default (configurable via `PORT`).
 
 These are available both locally (`http://localhost:3000`) and on the live deployment above.
 
-## Testing
-
-Run the sample test cases:
-```bash
-npm test
-```
-
-Other test scripts in `tests/`:
-- `apiEndpoint.test.js` — tests the API endpoint
-- `sampleCases.test.js` — runs sample cases against the optimizer
-- `testOpenRouterLive.js` — live test against the OpenRouter API (requires a valid `OPENROUTER_API_KEY`)
-
 ## Project Structure
 
 ```
