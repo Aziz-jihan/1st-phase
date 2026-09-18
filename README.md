@@ -104,3 +104,37 @@ src/
 See [`.env.example`](./.env.example) for the full list. At minimum, you need:
 
 - `OPENROUTER_API_KEY` — your OpenRouter API key
+
+## Docker
+
+The repository includes a `Dockerfile` based on the official Node.js 18 Alpine image. The image installs production dependencies, exposes port `3000`, and runs the API as the non-root `node` user.
+
+### Build the image
+
+From the repository root, run:
+
+```bash
+docker build -t gridwise-energy-optimizer .
+```
+
+### Run the container
+
+Pass your OpenRouter API key when starting the container:
+
+```bash
+docker run --rm -p 3000:3000 \
+  -e OPENROUTER_API_KEY=your_openrouter_api_key \
+  gridwise-energy-optimizer
+```
+
+The API is then available at `http://localhost:3000`. Check that the container is running with:
+
+```bash
+curl http://localhost:3000/health
+```
+
+You can also load variables from a local `.env` file (do not commit this file):
+
+```bash
+docker run --rm -p 3000:3000 --env-file .env gridwise-energy-optimizer
+```
